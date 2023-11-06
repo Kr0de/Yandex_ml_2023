@@ -75,8 +75,7 @@ class KNearestNeighbor:
                 # not use a loop over dimension, nor use np.linalg.norm().          #
                 #####################################################################
                 # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-                dist = abs(X[i] - self.X_train[j])
-                dists[i, j] = dist
+                dists[i, j] = np.abs(X[i] - self.X_train[j])
                 # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
 
@@ -98,7 +97,7 @@ class KNearestNeighbor:
             # Do not use np.linalg.norm().                                        #
             #######################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-            dists[i, :] = abs(X[i] - self.X_train[:])
+            dists[i, :] = np.abs(X[i] - self.X_train[:])
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
 
@@ -126,7 +125,7 @@ class KNearestNeighbor:
         #       and two broadcast sums.                                         #
         #########################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-        dists = abs(X[:] - self.X_train[:])
+        dists = np.abs(X[:] - self.X_train[:])
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
 
